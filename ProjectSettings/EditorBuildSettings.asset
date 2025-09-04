@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Dayeon/Opening.unity
+    guid: 167c11ce57ecdb3438e7a1bb6ab2901f
+  - enabled: 1
+    path: Assets/Scenes/Dayeon/DayeonScene.unity
+    guid: 6fb82cf656b004eec8fae92b0b331be5
+  - enabled: 1
+    path: Assets/Scenes/Dayeon/GameOver.unity
+    guid: aee618753d8294c42b91c71271f6276a
+  m_configObjects: {}
