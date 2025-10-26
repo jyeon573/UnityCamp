@@ -7,30 +7,37 @@ public class GameManager : MonoBehaviour
     // ───── 싱글톤 ─────
     public static GameManager I;
     void Awake()
+{
+    if (I != null && I != this)
     {
-        if (I != null && I != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
-        I = this;
-        DontDestroyOnLoad(gameObject);
-        Time.timeScale = 1f;
-
-        // 씬 전환시 UI 다시 연결
-        SceneManager.activeSceneChanged += (_, __) =>
-        {
-            Time.timeScale = 1f;
-            AutoWireUI();
-            UpdateInGameScoreUI();
-
-            if (SceneManager.GetActiveScene().buildIndex == scoreSceneIndex)
-            {
-                int last = PlayerPrefs.GetInt("LastScore", 0);
-                if (scoreSceneText) scoreSceneText.text = last.ToString();
-            }
-        };
+        Destroy(gameObject);
+        return;
     }
+    I = this;
+    DontDestroyOnLoad(gameObject);
+    Time.timeScale = 1f;
+
+    // 씬 전환 시 자동 연결 + 점수 리셋 처리
+    SceneManager.activeSceneChanged += (_, __) =>
+    {
+        Time.timeScale = 1f;
+        AutoWireUI();
+
+        int idx = SceneManager.GetActiveScene().buildIndex;
+
+        // ✅ 게임 플레이 씬 들어올 때마다 점수 리셋
+        if (idx == gameplaySceneIndex)
+        {
+            StartNewRun();   // ← 새 함수 (1번에서 만든 거)
+        }
+        // ✅ 점수판 씬이면 저장된 점수 표시
+        else if (idx == scoreSceneIndex)
+        {
+            int last = PlayerPrefs.GetInt("LastScore", 0);
+            if (scoreSceneText) scoreSceneText.text = last.ToString();
+        }
+    };
+}
 
     // ───── 씬 정보 ─────
     [Header("Scene Index")]
@@ -120,10 +127,11 @@ public class GameManager : MonoBehaviour
 
     void AutoWireUI()
     {
-        if (!inGameScoreText) {
-    var go = GameObject.Find("CurrentScore");
-    if (go) inGameScoreText = go.GetComponent<TMP_Text>();
-}
+        if (!inGameScoreText)
+        {
+            var go = GameObject.Find("CurrentScore");
+            if (go) inGameScoreText = go.GetComponent<TMP_Text>();
+        }
 
         if (!scoreSceneText)
         {
@@ -137,4 +145,15 @@ public class GameManager : MonoBehaviour
         if (inGameScoreText)
             inGameScoreText.text = count.ToString();
     }
+
+    void StartNewRun()
+{
+    count = 0;            // ✅ 점수 리셋
+    isPaused = false;
+    isGameOver = false;
+    Time.timeScale = 1f;
+    AutoWireUI();         // 새 씬의 텍스트 다시 물고
+    UpdateInGameScoreUI();// 0으로 즉시 표시
 }
+}
+
