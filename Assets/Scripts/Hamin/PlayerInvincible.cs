@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class PlayerInvincible : MonoBehaviour
 {
-    [Header("Invincible")]
-    public float invincibilityDuration = 2f; // 무적 지속
-    public float blinkInterval = 0.2f;       // 깜빡임 간격
-    public bool isInvincible = false;
+    [Header("Invincibility Settings")]
+    public float invincibilityDuration = 2f;
+    public float blinkInterval = 0.2f;
+    bool isInvincible = false;
 
     Renderer[] renderers;
     Coroutine invincibilityCoroutine;
@@ -21,18 +21,19 @@ public class PlayerInvincible : MonoBehaviour
     [Header("State")]
     public int heart = 3;
 
-    GameManager gm;  // GameManager 인스턴스
+    GameManager gm;
 
     void Start()
     {
         renderers = GetComponentsInChildren<Renderer>();
         if (renderers.Length == 0)
-            Debug.LogError("No Renderer found on player or its children!");
+            Debug.LogError("[PlayerInvincible] Renderer missing on player!");
 
-        // 인스펙터에 안 꽂았으면 자동으로 찾아 사용
-        if (!damageOverlay) damageOverlay = GetComponent<DamageOverlay>();
         gm = FindObjectOfType<GameManager>();
-        if (!gm) Debug.LogError("GameManager not found in scene.");
+        if (!gm) Debug.LogError("[PlayerInvincible] GameManager not found in scene.");
+
+        if (!damageOverlay)
+            damageOverlay = GetComponent<DamageOverlay>();
     }
 
     void OnTriggerEnter(Collider other)
@@ -49,13 +50,15 @@ public class PlayerInvincible : MonoBehaviour
 
             heart--;
 
-            if (damageOverlay) damageOverlay.ShowDamageEffect();
+            if (damageOverlay)
+                damageOverlay.ShowDamageEffect();
 
             if (heart <= 0)
             {
-                // ✅ stage 쓰지 말고 GameManager로 게임오버 처리
-                if (gm) gm.GameOver();
-                else Debug.LogError("GameOver skipped: GameManager missing.");
+                if (gm)
+                    gm.GameOver(); // ✅ GameManager 통해 게임오버
+                else
+                    Debug.LogError("[PlayerInvincible] GameManager missing, cannot GameOver.");
             }
         }
     }
@@ -71,16 +74,20 @@ public class PlayerInvincible : MonoBehaviour
     IEnumerator InvincibilityRoutine()
     {
         isInvincible = true;
-        float t = 0f;
+        float timer = 0f;
 
-        while (t < invincibilityDuration)
+        while (timer < invincibilityDuration)
         {
-            foreach (var r in renderers) r.enabled = !r.enabled;
+            foreach (var r in renderers)
+                r.enabled = !r.enabled;
+
             yield return new WaitForSeconds(blinkInterval);
-            t += blinkInterval;
+            timer += blinkInterval;
         }
 
-        foreach (var r in renderers) r.enabled = true;
+        foreach (var r in renderers)
+            r.enabled = true;
+
         isInvincible = false;
     }
 }

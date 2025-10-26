@@ -4,46 +4,67 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    // ── Singleton ──────────────────────────────────────────────────────────────
+    // ───── 싱글톤 ─────
     public static GameManager I;
     void Awake()
     {
-        if (I != null && I != this) { Destroy(gameObject); return; }
+        if (I != null && I != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
         I = this;
         DontDestroyOnLoad(gameObject);
-
         Time.timeScale = 1f;
-        SceneManager.activeSceneChanged += OnSceneChanged;
+
+        // 씬 전환시 UI 다시 연결
+        SceneManager.activeSceneChanged += (_, __) =>
+        {
+            Time.timeScale = 1f;
+            AutoWireUI();
+            UpdateInGameScoreUI();
+
+            if (SceneManager.GetActiveScene().buildIndex == scoreSceneIndex)
+            {
+                int last = PlayerPrefs.GetInt("LastScore", 0);
+                if (scoreSceneText) scoreSceneText.text = last.ToString();
+            }
+        };
     }
 
-    // ── Scene Index (프로젝트에 맞게 인스펙터에서 지정) ─────────────────────────
+    // ───── 씬 정보 ─────
     [Header("Scene Index")]
-    public int gameplaySceneIndex = 1;   // 제리가 뛰는 씬
-    public int scoreSceneIndex    = 2;   // 점수판 씬
+    public int gameplaySceneIndex = 1;
+    public int scoreSceneIndex = 2;
 
-    // ── UI 참조 (선택). 씬마다 자동 탐색도 해줌 ────────────────────────────────
-    [Header("Optional UI (Gameplay)")]
-    public TMP_Text inGameScoreText;     // 게임 중 점수 UI (없으면 자동 탐색)
-    [Header("Optional UI (Score)")]
-    public TMP_Text scoreSceneText;      // 점수판 씬의 텍스트 (없으면 자동 탐색)
-    [Header("Auto-Find names (fallback)")]
-    public string inGameScoreName = "InGameScoreText"; // 게임 씬에서 찾을 이름
-    public string scoreTextName   = "ScoreText";       // 점수 씬에서 찾을 이름
+    // ───── UI 참조 ─────
+    [Header("UI")]
+    public TMP_Text inGameScoreText;  // 게임 중 점수 텍스트
+    public TMP_Text scoreSceneText;   // 점수판 씬 텍스트
 
-    // ── 상태 ───────────────────────────────────────────────────────────────────
-    public int count = 0;      // 이번 판 점수
+    public string inGameScoreName = "CurrentScore";
+    public string scoreTextName = "ScoreText";
+
+    // ───── 상태값 ─────
+    public int count = 0;
     bool isPaused = false;
+    bool isGameOver = false;
 
-    // ── 입력 ───────────────────────────────────────────────────────────────────
+    void Start()
+    {
+        AutoWireUI();
+        UpdateInGameScoreUI();
+    }
+
     void Update()
     {
         int cur = SceneManager.GetActiveScene().buildIndex;
 
-        // 게임 씬: Space/Q/ESC = 일시정지 토글, R = 재시작
+        // 게임 씬: 일시정지/재시작
         if (cur == gameplaySceneIndex)
         {
             if (Input.GetKeyDown(KeyCode.Space) ||
-                Input.GetKeyDown(KeyCode.Q)     ||
+                Input.GetKeyDown(KeyCode.Q) ||
                 Input.GetKeyDown(KeyCode.Escape))
                 TogglePause();
 
@@ -51,60 +72,37 @@ public class GameManager : MonoBehaviour
             {
                 Time.timeScale = 1f;
                 isPaused = false;
+                isGameOver = false;
                 SceneManager.LoadScene(gameplaySceneIndex);
             }
         }
-        // 점수판 씬: Space/R = 다시 게임 시작
+        // 점수판 씬: Space/R = 게임 다시 시작
         else if (cur == scoreSceneIndex)
         {
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.R))
             {
                 Time.timeScale = 1f;
                 isPaused = false;
+                isGameOver = false;
                 SceneManager.LoadScene(gameplaySceneIndex);
             }
         }
     }
 
-    // ── 씬 전환시 초기화/표시 ───────────────────────────────────────────────────
-    void OnSceneChanged(Scene prev, Scene next)
-    {
-        int idx = next.buildIndex;
-        Time.timeScale = 1f;   // 혹시 멈춤 상태였다면 복구
-        isPaused = false;
-
-        if (idx == gameplaySceneIndex)
-        {
-            // 새 판 시작
-            count = 0;
-
-            // 게임 씬 점수 텍스트 연결 (참조 없으면 이름으로 찾기)
-            if (!inGameScoreText)
-                inGameScoreText = GameObject.Find(inGameScoreName)?.GetComponent<TMP_Text>();
-
-            UpdateInGameScoreUI();
-        }
-        else if (idx == scoreSceneIndex)
-        {
-            // 점수판 표시
-            if (!scoreSceneText)
-                scoreSceneText = GameObject.Find(scoreTextName)?.GetComponent<TMP_Text>();
-
-            int last = PlayerPrefs.GetInt("LastScore", 0);
-            if (scoreSceneText) scoreSceneText.text = last.ToString();
-        }
-    }
-
-    // ── 게임 중 점수 증가 (코인 등에서 호출) ───────────────────────────────────
+    // ───── 점수 관리 ─────
     public void CountUp(int add)
     {
         count += add;
+        Debug.Log($"[GameManager] Count = {count}");
         UpdateInGameScoreUI();
     }
 
-    // ── 게임 오버(플레이어 체력 0 등에서 호출) ────────────────────────────────
+    // ───── 게임오버 처리 ─────
     public void GameOver()
     {
+        if (isGameOver) return;
+        isGameOver = true;
+
         PlayerPrefs.SetInt("LastScore", count);
         PlayerPrefs.Save();
 
@@ -112,15 +110,31 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(scoreSceneIndex);
     }
 
-    // ── 내부 유틸 ───────────────────────────────────────────────────────────────
+    // ───── 내부 함수들 ─────
     void TogglePause()
     {
+        if (isGameOver) return;
         isPaused = !isPaused;
         Time.timeScale = isPaused ? 0f : 1f;
     }
 
+    void AutoWireUI()
+    {
+        if (!inGameScoreText) {
+    var go = GameObject.Find("CurrentScore");
+    if (go) inGameScoreText = go.GetComponent<TMP_Text>();
+}
+
+        if (!scoreSceneText)
+        {
+            var go2 = GameObject.Find(scoreTextName);
+            if (go2) scoreSceneText = go2.GetComponent<TMP_Text>();
+        }
+    }
+
     void UpdateInGameScoreUI()
     {
-        if (inGameScoreText) inGameScoreText.text = count.ToString();
+        if (inGameScoreText)
+            inGameScoreText.text = count.ToString();
     }
 }
