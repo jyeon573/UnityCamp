@@ -156,8 +156,8 @@
       "DisplayName": "Writing UnityEngine.TestRunner.UnityAdditionalFile.txt",
       "ActionType": "WriteFile",
       "PayloadOffset": 106,
-      "PayloadLength": 52,
-      "PayloadDebugContentSnippet": "/Users/jungdayeon/wkspaces/My ",
+      "PayloadLength": 108,
+      "PayloadDebugContentSnippet": "/Users/jungdayeon/Library/Mobi",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/200b0aP.dag/UnityEngine.TestRunner.UnityAdditionalFile.txt"
@@ -168,7 +168,7 @@
       "Annotation": "WriteText Library/Bee/artifacts/200b0aP.dag/UnityEngine.TestRunner.rsp",
       "DisplayName": "Writing UnityEngine.TestRunner.rsp",
       "ActionType": "WriteFile",
-      "PayloadOffset": 250,
+      "PayloadOffset": 306,
       "PayloadLength": 45427,
       "PayloadDebugContentSnippet": "-target:library\n-out:\"Library/",
       "Inputs": [],
@@ -181,9 +181,9 @@
       "Annotation": "WriteText Library/Bee/artifacts/200b0aP.dag/UnityEngine.TestRunner.rsp2",
       "DisplayName": "Writing UnityEngine.TestRunner.rsp2",
       "ActionType": "WriteFile",
-      "PayloadOffset": 45770,
-      "PayloadLength": 65,
-      "PayloadDebugContentSnippet": "/pathmap:\"/Users/jungdayeon/wk",
+      "PayloadOffset": 45826,
+      "PayloadLength": 121,
+      "PayloadDebugContentSnippet": "/pathmap:\"/Users/jungdayeon/Li",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/200b0aP.dag/UnityEngine.TestRunner.rsp2"
@@ -1639,7 +1639,7 @@
       "Annotation": "WriteText Library/Bee/artifacts/200b0aP.dag/UnityEngine.TestRunner.dll.mvfrm.rsp",
       "DisplayName": "Writing UnityEngine.TestRunner.dll.mvfrm.rsp",
       "ActionType": "WriteFile",
-      "PayloadOffset": 45937,
+      "PayloadOffset": 46049,
       "PayloadLength": 5728,
       "PayloadDebugContentSnippet": "Library/Bee/artifacts/mvdfrm/U",
       "Inputs": [],
@@ -1804,9 +1804,9 @@
       "Annotation": "WriteText Library/Bee/artifacts/200b0aP.dag/UnityEngine.UI.UnityAdditionalFile.txt",
       "DisplayName": "Writing UnityEngine.UI.UnityAdditionalFile.txt",
       "ActionType": "WriteFile",
-      "PayloadOffset": 51769,
-      "PayloadLength": 52,
-      "PayloadDebugContentSnippet": "/Users/jungdayeon/wkspaces/My ",
+      "PayloadOffset": 51881,
+      "PayloadLength": 108,
+      "PayloadDebugContentSnippet": "/Users/jungdayeon/Library/Mobi",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/200b0aP.dag/UnityEngine.UI.UnityAdditionalFile.txt"
@@ -1817,7 +1817,7 @@
       "Annotation": "WriteText Library/Bee/artifacts/200b0aP.dag/UnityEngine.UI.rsp",
       "DisplayName": "Writing UnityEngine.UI.rsp",
       "ActionType": "WriteFile",
-      "PayloadOffset": 51905,
+      "PayloadOffset": 52073,
       "PayloadLength": 38995,
       "PayloadDebugContentSnippet": "-target:library\n-out:\"Library/",
       "Inputs": [],
@@ -1830,9 +1830,9 @@
       "Annotation": "WriteText Library/Bee/artifacts/200b0aP.dag/UnityEngine.UI.rsp2",
       "DisplayName": "Writing UnityEngine.UI.rsp2",
       "ActionType": "WriteFile",
-      "PayloadOffset": 90985,
-      "PayloadLength": 65,
-      "PayloadDebugContentSnippet": "/pathmap:\"/Users/jungdayeon/wk",
+      "PayloadOffset": 91153,
+      "PayloadLength": 121,
+      "PayloadDebugContentSnippet": "/pathmap:\"/Users/jungdayeon/Li",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/200b0aP.dag/UnityEngine.UI.rsp2"
@@ -2170,7 +2170,7 @@
       "Annotation": "WriteText Library/Bee/artifacts/200b0aP.dag/UnityEngine.UI.dll.mvfrm.rsp",
       "DisplayName": "Writing UnityEngine.UI.dll.mvfrm.rsp",
       "ActionType": "WriteFile",
-      "PayloadOffset": 91144,
+      "PayloadOffset": 91368,
       "PayloadLength": 5821,
       "PayloadDebugContentSnippet": "Library/Bee/artifacts/mvdfrm/U",
       "Inputs": [],
@@ -2337,9 +2337,9 @@
       "Annotation": "WriteText Library/Bee/artifacts/200b0aP.dag/Unity.TextMeshPro.UnityAdditionalFile.txt",
       "DisplayName": "Writing Unity.TextMeshPro.UnityAdditionalFile.txt",
       "ActionType": "WriteFile",
-      "PayloadOffset": 97072,
-      "PayloadLength": 52,
-      "PayloadDebugContentSnippet": "/Users/jungdayeon/wkspaces/My ",
+      "PayloadOffset": 97296,
+      "PayloadLength": 108,
+      "PayloadDebugContentSnippet": "/Users/jungdayeon/Library/Mobi",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/200b0aP.dag/Unity.TextMeshPro.UnityAdditionalFile.txt"
@@ -2350,7 +2350,7 @@
       "Annotation": "WriteText Library/Bee/artifacts/200b0aP.dag/Unity.TextMeshPro.rsp",
       "DisplayName": "Writing Unity.TextMeshPro.rsp",
       "ActionType": "WriteFile",
-      "PayloadOffset": 97211,
+      "PayloadOffset": 97491,
       "PayloadLength": 37048,
       "PayloadDebugContentSnippet": "-target:library\n-out:\"Library/",
       "Inputs": [],
@@ -2363,9 +2363,9 @@
       "Annotation": "WriteText Library/Bee/artifacts/200b0aP.dag/Unity.TextMeshPro.rsp2",
       "DisplayName": "Writing Unity.TextMeshPro.rsp2",
       "ActionType": "WriteFile",
-      "PayloadOffset": 134347,
-      "PayloadLength": 65,
-      "PayloadDebugContentSnippet": "/pathmap:\"/Users/jungdayeon/wk",
+      "PayloadOffset": 134627,
+      "PayloadLength": 121,
+      "PayloadDebugContentSnippet": "/pathmap:\"/Users/jungdayeon/Li",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/200b0aP.dag/Unity.TextMeshPro.rsp2"
@@ -2682,7 +2682,7 @@
       "Annotation": "WriteText Library/Bee/artifacts/200b0aP.dag/Unity.TextMeshPro.dll.mvfrm.rsp",
       "DisplayName": "Writing Unity.TextMeshPro.dll.mvfrm.rsp",
       "ActionType": "WriteFile",
-      "PayloadOffset": 134509,
+      "PayloadOffset": 134845,
       "PayloadLength": 5896,
       "PayloadDebugContentSnippet": "Library/Bee/artifacts/mvdfrm/U",
       "Inputs": [],
@@ -2851,9 +2851,9 @@
       "Annotation": "WriteText Library/Bee/artifacts/200b0aP.dag/Unity.Timeline.UnityAdditionalFile.txt",
       "DisplayName": "Writing Unity.Timeline.UnityAdditionalFile.txt",
       "ActionType": "WriteFile",
-      "PayloadOffset": 140509,
-      "PayloadLength": 52,
-      "PayloadDebugContentSnippet": "/Users/jungdayeon/wkspaces/My ",
+      "PayloadOffset": 140845,
+      "PayloadLength": 108,
+      "PayloadDebugContentSnippet": "/Users/jungdayeon/Library/Mobi",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/200b0aP.dag/Unity.Timeline.UnityAdditionalFile.txt"
@@ -2864,7 +2864,7 @@
       "Annotation": "WriteText Library/Bee/artifacts/200b0aP.dag/Unity.Timeline.rsp",
       "DisplayName": "Writing Unity.Timeline.rsp",
       "ActionType": "WriteFile",
-      "PayloadOffset": 140645,
+      "PayloadOffset": 141037,
       "PayloadLength": 38117,
       "PayloadDebugContentSnippet": "-target:library\n-out:\"Library/",
       "Inputs": [],
@@ -2877,9 +2877,9 @@
       "Annotation": "WriteText Library/Bee/artifacts/200b0aP.dag/Unity.Timeline.rsp2",
       "DisplayName": "Writing Unity.Timeline.rsp2",
       "ActionType": "WriteFile",
-      "PayloadOffset": 178847,
-      "PayloadLength": 65,
-      "PayloadDebugContentSnippet": "/pathmap:\"/Users/jungdayeon/wk",
+      "PayloadOffset": 179239,
+      "PayloadLength": 121,
+      "PayloadDebugContentSnippet": "/pathmap:\"/Users/jungdayeon/Li",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/200b0aP.dag/Unity.Timeline.rsp2"
@@ -3192,7 +3192,7 @@
       "Annotation": "WriteText Library/Bee/artifacts/200b0aP.dag/Unity.Timeline.dll.mvfrm.rsp",
       "DisplayName": "Writing Unity.Timeline.dll.mvfrm.rsp",
       "ActionType": "WriteFile",
-      "PayloadOffset": 179006,
+      "PayloadOffset": 179454,
       "PayloadLength": 5896,
       "PayloadDebugContentSnippet": "Library/Bee/artifacts/mvdfrm/U",
       "Inputs": [],
@@ -3361,9 +3361,9 @@
       "Annotation": "WriteText Library/Bee/artifacts/200b0aP.dag/Unity.VisualScripting.Core.UnityAdditionalFile.txt",
       "DisplayName": "Writing Unity.VisualScripting.Core.UnityAdditionalFile.txt",
       "ActionType": "WriteFile",
-      "PayloadOffset": 185018,
-      "PayloadLength": 52,
-      "PayloadDebugContentSnippet": "/Users/jungdayeon/wkspaces/My ",
+      "PayloadOffset": 185466,
+      "PayloadLength": 108,
+      "PayloadDebugContentSnippet": "/Users/jungdayeon/Library/Mobi",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/200b0aP.dag/Unity.VisualScripting.Core.UnityAdditionalFile.txt"
@@ -3374,7 +3374,7 @@
       "Annotation": "WriteText Library/Bee/artifacts/200b0aP.dag/Unity.VisualScripting.Core.rsp",
       "DisplayName": "Writing Unity.VisualScripting.Core.rsp",
       "ActionType": "WriteFile",
-      "PayloadOffset": 185166,
+      "PayloadOffset": 185670,
       "PayloadLength": 85612,
       "PayloadDebugContentSnippet": "-target:library\n-out:\"Library/",
       "Inputs": [],
@@ -3387,9 +3387,9 @@
       "Annotation": "WriteText Library/Bee/artifacts/200b0aP.dag/Unity.VisualScripting.Core.rsp2",
       "DisplayName": "Writing Unity.VisualScripting.Core.rsp2",
       "ActionType": "WriteFile",
-      "PayloadOffset": 270875,
-      "PayloadLength": 65,
-      "PayloadDebugContentSnippet": "/pathmap:\"/Users/jungdayeon/wk",
+      "PayloadOffset": 271379,
+      "PayloadLength": 121,
+      "PayloadDebugContentSnippet": "/pathmap:\"/Users/jungdayeon/Li",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/200b0aP.dag/Unity.VisualScripting.Core.rsp2"
@@ -4058,7 +4058,7 @@
       "Annotation": "WriteText Library/Bee/artifacts/200b0aP.dag/Unity.VisualScripting.Core.dll.mvfrm.rsp",
       "DisplayName": "Writing Unity.VisualScripting.Core.dll.mvfrm.rsp",
       "ActionType": "WriteFile",
-      "PayloadOffset": 271046,
+      "PayloadOffset": 271606,
       "PayloadLength": 5896,
       "PayloadDebugContentSnippet": "Library/Bee/artifacts/mvdfrm/U",
       "Inputs": [],
@@ -4227,9 +4227,9 @@
       "Annotation": "WriteText Library/Bee/artifacts/200b0aP.dag/Unity.VisualScripting.Flow.UnityAdditionalFile.txt",
       "DisplayName": "Writing Unity.VisualScripting.Flow.UnityAdditionalFile.txt",
       "ActionType": "WriteFile",
-      "PayloadOffset": 277058,
-      "PayloadLength": 52,
-      "PayloadDebugContentSnippet": "/Users/jungdayeon/wkspaces/My ",
+      "PayloadOffset": 277618,
+      "PayloadLength": 108,
+      "PayloadDebugContentSnippet": "/Users/jungdayeon/Library/Mobi",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/200b0aP.dag/Unity.VisualScripting.Flow.UnityAdditionalFile.txt"
@@ -4240,7 +4240,7 @@
       "Annotation": "WriteText Library/Bee/artifacts/200b0aP.dag/Unity.VisualScripting.Flow.rsp",
       "DisplayName": "Writing Unity.VisualScripting.Flow.rsp",
       "ActionType": "WriteFile",
-      "PayloadOffset": 277206,
+      "PayloadOffset": 277822,
       "PayloadLength": 80914,
       "PayloadDebugContentSnippet": "-target:library\n-out:\"Library/",
       "Inputs": [],
@@ -4253,9 +4253,9 @@
       "Annotation": "WriteText Library/Bee/artifacts/200b0aP.dag/Unity.VisualScripting.Flow.rsp2",
       "DisplayName": "Writing Unity.VisualScripting.Flow.rsp2",
       "ActionType": "WriteFile",
-      "PayloadOffset": 358217,
-      "PayloadLength": 65,
-      "PayloadDebugContentSnippet": "/pathmap:\"/Users/jungdayeon/wk",
+      "PayloadOffset": 358833,
+      "PayloadLength": 121,
+      "PayloadDebugContentSnippet": "/pathmap:\"/Users/jungdayeon/Li",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/200b0aP.dag/Unity.VisualScripting.Flow.rsp2"
@@ -4917,7 +4917,7 @@
       "Annotation": "WriteText Library/Bee/artifacts/200b0aP.dag/Unity.VisualScripting.Flow.dll.mvfrm.rsp",
       "DisplayName": "Writing Unity.VisualScripting.Flow.dll.mvfrm.rsp",
       "ActionType": "WriteFile",
-      "PayloadOffset": 358388,
+      "PayloadOffset": 359060,
       "PayloadLength": 5983,
       "PayloadDebugContentSnippet": "Library/Bee/artifacts/mvdfrm/U",
       "Inputs": [],
@@ -5088,9 +5088,9 @@
       "Annotation": "WriteText Library/Bee/artifacts/200b0aP.dag/Unity.VisualScripting.State.UnityAdditionalFile.txt",
       "DisplayName": "Writing Unity.VisualScripting.State.UnityAdditionalFile.txt",
       "ActionType": "WriteFile",
-      "PayloadOffset": 364488,
-      "PayloadLength": 52,
-      "PayloadDebugContentSnippet": "/Users/jungdayeon/wkspaces/My ",
+      "PayloadOffset": 365160,
+      "PayloadLength": 108,
+      "PayloadDebugContentSnippet": "/Users/jungdayeon/Library/Mobi",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/200b0aP.dag/Unity.VisualScripting.State.UnityAdditionalFile.txt"
@@ -5101,7 +5101,7 @@
       "Annotation": "WriteText Library/Bee/artifacts/200b0aP.dag/Unity.VisualScripting.State.rsp",
       "DisplayName": "Writing Unity.VisualScripting.State.rsp",
       "ActionType": "WriteFile",
-      "PayloadOffset": 364637,
+      "PayloadOffset": 365365,
       "PayloadLength": 35292,
       "PayloadDebugContentSnippet": "-target:library\n-out:\"Library/",
       "Inputs": [],
@@ -5114,9 +5114,9 @@
       "Annotation": "WriteText Library/Bee/artifacts/200b0aP.dag/Unity.VisualScripting.State.rsp2",
       "DisplayName": "Writing Unity.VisualScripting.State.rsp2",
       "ActionType": "WriteFile",
-      "PayloadOffset": 400027,
-      "PayloadLength": 65,
-      "PayloadDebugContentSnippet": "/pathmap:\"/Users/jungdayeon/wk",
+      "PayloadOffset": 400755,
+      "PayloadLength": 121,
+      "PayloadDebugContentSnippet": "/pathmap:\"/Users/jungdayeon/Li",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/200b0aP.dag/Unity.VisualScripting.State.rsp2"
@@ -5409,7 +5409,7 @@
       "Annotation": "WriteText Library/Bee/artifacts/200b0aP.dag/Unity.VisualScripting.State.dll.mvfrm.rsp",
       "DisplayName": "Writing Unity.VisualScripting.State.dll.mvfrm.rsp",
       "ActionType": "WriteFile",
-      "PayloadOffset": 400199,
+      "PayloadOffset": 400983,
       "PayloadLength": 6070,
       "PayloadDebugContentSnippet": "Library/Bee/artifacts/mvdfrm/U",
       "Inputs": [],
@@ -5582,9 +5582,9 @@
       "Annotation": "WriteText Library/Bee/artifacts/200b0aP.dag/Assembly-CSharp.UnityAdditionalFile.txt",
       "DisplayName": "Writing Assembly-CSharp.UnityAdditionalFile.txt",
       "ActionType": "WriteFile",
-      "PayloadOffset": 406374,
-      "PayloadLength": 52,
-      "PayloadDebugContentSnippet": "/Users/jungdayeon/wkspaces/My ",
+      "PayloadOffset": 407158,
+      "PayloadLength": 108,
+      "PayloadDebugContentSnippet": "/Users/jungdayeon/Library/Mobi",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/200b0aP.dag/Assembly-CSharp.UnityAdditionalFile.txt"
@@ -5595,7 +5595,7 @@
       "Annotation": "WriteText Library/Bee/artifacts/200b0aP.dag/Assembly-CSharp.rsp",
       "DisplayName": "Writing Assembly-CSharp.rsp",
       "ActionType": "WriteFile",
-      "PayloadOffset": 406511,
+      "PayloadOffset": 407351,
       "PayloadLength": 32741,
       "PayloadDebugContentSnippet": "-target:library\n-out:\"Library/",
       "Inputs": [],
@@ -5608,7 +5608,7 @@
       "Annotation": "WriteText Library/Bee/artifacts/200b0aP.dag/Assembly-CSharp.rsp2",
       "DisplayName": "Writing Assembly-CSharp.rsp2",
       "ActionType": "WriteFile",
-      "PayloadOffset": 439338,
+      "PayloadOffset": 440178,
       "PayloadLength": 0,
       "PayloadDebugContentSnippet": "",
       "Inputs": [],
@@ -5924,7 +5924,7 @@
       "Annotation": "WriteText Library/Bee/artifacts/200b0aP.dag/Assembly-CSharp.dll.mvfrm.rsp",
       "DisplayName": "Writing Assembly-CSharp.dll.mvfrm.rsp",
       "ActionType": "WriteFile",
-      "PayloadOffset": 439433,
+      "PayloadOffset": 440273,
       "PayloadLength": 6311,
       "PayloadDebugContentSnippet": "Library/Bee/artifacts/mvdfrm/U",
       "Inputs": [],
@@ -6342,7 +6342,7 @@
     {
       "Annotation": "BuildPlayerDataGenerator Library/BuildPlayerData/Player/RuntimeInitializeOnLoads.json (+1 other)",
       "DisplayName": "BuildPlayerDataGenerator RuntimeInitializeOnLoads",
-      "Action": "\"/Applications/Unity/Hub/Editor/2022.3.33f1/Unity.app/Contents/Tools/netcorerun/netcorerun\" \"/Applications/Unity/Hub/Editor/2022.3.33f1/Unity.app/Contents/Tools/BuildPlayerDataGenerator/BuildPlayerDataGenerator.exe\" -a=\"/Users/jungdayeon/wkspaces/My project-Project_group3/Library/Bee/PlayerScriptAssemblies/Assembly-CSharp.dll\" -a=\"/Users/jungdayeon/wkspaces/My project-Project_group3/Library/Bee/PlayerScriptAssemblies/Unity.TextMeshPro.dll\" -a=\"/Users/jungdayeon/wkspaces/My project-Project_group3/Library/Bee/PlayerScriptAssemblies/Unity.Timeline.dll\" -a=\"/Users/jungdayeon/wkspaces/My project-Project_group3/Library/Bee/PlayerScriptAssemblies/Unity.VisualScripting.Core.dll\" -a=\"/Users/jungdayeon/wkspaces/My project-Project_group3/Library/Bee/PlayerScriptAssemblies/Unity.VisualScripting.Flow.dll\" -a=\"/Users/jungdayeon/wkspaces/My project-Project_group3/Library/Bee/PlayerScriptAssemblies/Unity.VisualScripting.State.dll\" -a=\"/Users/jungdayeon/wkspaces/My project-Project_group3/Library/Bee/PlayerScriptAssemblies/UnityEngine.TestRunner.dll\" -a=\"/Users/jungdayeon/wkspaces/My project-Project_group3/Library/Bee/PlayerScriptAssemblies/UnityEngine.UI.dll\" -a=\"/Users/jungdayeon/wkspaces/My project-Project_group3/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll\" -a=\"/Users/jungdayeon/wkspaces/My project-Project_group3/Library/PackageCache/com.unity.visualscripting@1.9.4/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll\" -s=\"/Applications/Unity/Hub/Editor/2022.3.33f1/Unity.app/Contents/Managed/UnityEngine\" -s=\"/Applications/Unity/Hub/Editor/2022.3.33f1/Unity.app/Contents/NetStandard/compat/2.1.0/shims/netfx\" -s=\"/Applications/Unity/Hub/Editor/2022.3.33f1/Unity.app/Contents/NetStandard/compat/2.1.0/shims/netstandard\" -s=\"/Applications/Unity/Hub/Editor/2022.3.33f1/Unity.app/Contents/NetStandard/Extensions/2.0.0\" -s=\"/Applications/Unity/Hub/Editor/2022.3.33f1/Unity.app/Contents/NetStandard/ref/2.1.0\" -s=\"/Users/jungdayeon/wkspaces/My project-Project_group3/Library/Bee/PlayerScriptAssemblies\" -s=\"/Users/jungdayeon/wkspaces/My project-Project_group3/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom\" -s=\"/Users/jungdayeon/wkspaces/My project-Project_group3/Library/PackageCache/com.unity.visualscripting@1.9.4/Runtime/VisualScripting.Flow/Dependencies/NCalc\" -o=\"Library/BuildPlayerData/Player\" -rn=\"RuntimeInitializeOnLoads.json\" -tn=\"TypeDb-All.json\"",
+      "Action": "\"/Applications/Unity/Hub/Editor/2022.3.33f1/Unity.app/Contents/Tools/netcorerun/netcorerun\" \"/Applications/Unity/Hub/Editor/2022.3.33f1/Unity.app/Contents/Tools/BuildPlayerDataGenerator/BuildPlayerDataGenerator.exe\" -a=\"/Users/jungdayeon/Library/Mobile Documents/com~apple~CloudDocs/24-2/유니티캠프/Group3/Library/Bee/PlayerScriptAssemblies/Assembly-CSharp.dll\" -a=\"/Users/jungdayeon/Library/Mobile Documents/com~apple~CloudDocs/24-2/유니티캠프/Group3/Library/Bee/PlayerScriptAssemblies/Unity.TextMeshPro.dll\" -a=\"/Users/jungdayeon/Library/Mobile Documents/com~apple~CloudDocs/24-2/유니티캠프/Group3/Library/Bee/PlayerScriptAssemblies/Unity.Timeline.dll\" -a=\"/Users/jungdayeon/Library/Mobile Documents/com~apple~CloudDocs/24-2/유니티캠프/Group3/Library/Bee/PlayerScriptAssemblies/Unity.VisualScripting.Core.dll\" -a=\"/Users/jungdayeon/Library/Mobile Documents/com~apple~CloudDocs/24-2/유니티캠프/Group3/Library/Bee/PlayerScriptAssemblies/Unity.VisualScripting.Flow.dll\" -a=\"/Users/jungdayeon/Library/Mobile Documents/com~apple~CloudDocs/24-2/유니티캠프/Group3/Library/Bee/PlayerScriptAssemblies/Unity.VisualScripting.State.dll\" -a=\"/Users/jungdayeon/Library/Mobile Documents/com~apple~CloudDocs/24-2/유니티캠프/Group3/Library/Bee/PlayerScriptAssemblies/UnityEngine.TestRunner.dll\" -a=\"/Users/jungdayeon/Library/Mobile Documents/com~apple~CloudDocs/24-2/유니티캠프/Group3/Library/Bee/PlayerScriptAssemblies/UnityEngine.UI.dll\" -a=\"/Users/jungdayeon/Library/Mobile Documents/com~apple~CloudDocs/24-2/유니티캠프/Group3/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll\" -a=\"/Users/jungdayeon/Library/Mobile Documents/com~apple~CloudDocs/24-2/유니티캠프/Group3/Library/PackageCache/com.unity.visualscripting@1.9.4/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll\" -s=\"/Applications/Unity/Hub/Editor/2022.3.33f1/Unity.app/Contents/Managed/UnityEngine\" -s=\"/Applications/Unity/Hub/Editor/2022.3.33f1/Unity.app/Contents/NetStandard/compat/2.1.0/shims/netfx\" -s=\"/Applications/Unity/Hub/Editor/2022.3.33f1/Unity.app/Contents/NetStandard/compat/2.1.0/shims/netstandard\" -s=\"/Applications/Unity/Hub/Editor/2022.3.33f1/Unity.app/Contents/NetStandard/Extensions/2.0.0\" -s=\"/Applications/Unity/Hub/Editor/2022.3.33f1/Unity.app/Contents/NetStandard/ref/2.1.0\" -s=\"/Users/jungdayeon/Library/Mobile Documents/com~apple~CloudDocs/24-2/유니티캠프/Group3/Library/Bee/PlayerScriptAssemblies\" -s=\"/Users/jungdayeon/Library/Mobile Documents/com~apple~CloudDocs/24-2/유니티캠프/Group3/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom\" -s=\"/Users/jungdayeon/Library/Mobile Documents/com~apple~CloudDocs/24-2/유니티캠프/Group3/Library/PackageCache/com.unity.visualscripting@1.9.4/Runtime/VisualScripting.Flow/Dependencies/NCalc\" -o=\"Library/BuildPlayerData/Player\" -rn=\"RuntimeInitializeOnLoads.json\" -tn=\"TypeDb-All.json\"",
       "Inputs": [
         "/Applications/Unity/Hub/Editor/2022.3.33f1/Unity.app/Contents/Tools/netcorerun/netcorerun",
         "/Applications/Unity/Hub/Editor/2022.3.33f1/Unity.app/Contents/Tools/BuildPlayerDataGenerator/BuildPlayerDataGenerator.exe",
@@ -6494,7 +6494,7 @@
   ],
   "StatSignatures": [
     {
-      "File": "/Users/jungdayeon/wkspaces/My project-Project_group3/getconf"
+      "File": "/Users/jungdayeon/Library/Mobile Documents/com~apple~CloudDocs/24-2/유니티캠프/Group3/getconf"
     },
     {
       "File": "Assets/csc.rsp"
@@ -6565,6 +6565,6 @@
   "SharedResources": [],
   "Scanners": [],
   "Identifier": "Library/Bee/200b0aP.dag.json",
-  "PayloadsFile": "/Users/jungdayeon/wkspaces/My project-Project_group3/Library/Bee/200b0aP.dag.payloads",
+  "PayloadsFile": "/Users/jungdayeon/Library/Mobile Documents/com~apple~CloudDocs/24-2/유니티캠프/Group3/Library/Bee/200b0aP.dag.payloads",
   "RelativePathToRoot": "../.."
 }

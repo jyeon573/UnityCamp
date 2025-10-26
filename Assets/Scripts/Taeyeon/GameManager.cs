@@ -7,37 +7,38 @@ public class GameManager : MonoBehaviour
     // ───── 싱글톤 ─────
     public static GameManager I;
     void Awake()
-{
-    if (I != null && I != this)
     {
-        Destroy(gameObject);
-        return;
-    }
-    I = this;
-    DontDestroyOnLoad(gameObject);
-    Time.timeScale = 1f;
-
-    // 씬 전환 시 자동 연결 + 점수 리셋 처리
-    SceneManager.activeSceneChanged += (_, __) =>
-    {
+        if (I != null && I != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        I = this;
+        DontDestroyOnLoad(gameObject);
         Time.timeScale = 1f;
-        AutoWireUI();
 
-        int idx = SceneManager.GetActiveScene().buildIndex;
+        // 씬 전환 시 자동 연결 + 점수 리셋 처리
+        SceneManager.activeSceneChanged += (_, __) =>
+        {
+            Time.timeScale = 1f;
+            AutoWireUI();
 
-        // ✅ 게임 플레이 씬 들어올 때마다 점수 리셋
-        if (idx == gameplaySceneIndex)
-        {
-            StartNewRun();   // ← 새 함수 (1번에서 만든 거)
-        }
-        // ✅ 점수판 씬이면 저장된 점수 표시
-        else if (idx == scoreSceneIndex)
-        {
-            int last = PlayerPrefs.GetInt("LastScore", 0);
-            if (scoreSceneText) scoreSceneText.text = last.ToString();
-        }
-    };
-}
+            int idx = SceneManager.GetActiveScene().buildIndex;
+
+            // ✅ 게임 플레이 씬 들어올 때마다 점수 리셋
+            if (idx == gameplaySceneIndex)
+            {
+                StartNewRun();   // ← 새 함수 (1번에서 만든 거)
+            }
+            // ✅ 점수판 씬이면 저장된 점수 표시
+            else if (idx == scoreSceneIndex)
+            {
+                int last = PlayerPrefs.GetInt("LastScore", 0);
+                if (scoreSceneText)
+                    scoreSceneText.text = $"{last}";
+            }
+        };
+    }
 
     // ───── 씬 정보 ─────
     [Header("Scene Index")]
@@ -138,6 +139,13 @@ public class GameManager : MonoBehaviour
             var go2 = GameObject.Find(scoreTextName);
             if (go2) scoreSceneText = go2.GetComponent<TMP_Text>();
         }
+
+        if (!scoreSceneText)
+    {
+        var go2 = GameObject.Find("CurrentScore");
+        if (!go2) go2 = GameObject.Find("ScoreText");
+        if (go2) scoreSceneText = go2.GetComponent<TMP_Text>();
+    }
     }
 
     void UpdateInGameScoreUI()
@@ -147,13 +155,13 @@ public class GameManager : MonoBehaviour
     }
 
     void StartNewRun()
-{
-    count = 0;            // ✅ 점수 리셋
-    isPaused = false;
-    isGameOver = false;
-    Time.timeScale = 1f;
-    AutoWireUI();         // 새 씬의 텍스트 다시 물고
-    UpdateInGameScoreUI();// 0으로 즉시 표시
-}
+    {
+        count = 0;            // ✅ 점수 리셋
+        isPaused = false;
+        isGameOver = false;
+        Time.timeScale = 1f;
+        AutoWireUI();         // 새 씬의 텍스트 다시 물고
+        UpdateInGameScoreUI();// 0으로 즉시 표시
+    }
 }
 
