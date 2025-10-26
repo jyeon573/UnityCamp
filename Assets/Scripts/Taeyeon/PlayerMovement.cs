@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other){
         if(other.tag=="coin"){
-            GameManager.count++;
+            FindObjectOfType<GameManager>().CountUp(1);
             count++;
             other.gameObject.transform.position=new Vector3(x,-1.5f,z);
             GM.CountUp(count);
