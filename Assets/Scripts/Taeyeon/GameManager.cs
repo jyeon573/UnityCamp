@@ -90,43 +90,52 @@ public class GameManager : MonoBehaviour
 
     // ───── 내부 함수들 ─────
     void Update()
-{
-    int idx = SceneManager.GetActiveScene().buildIndex;
+    {
+        int idx = SceneManager.GetActiveScene().buildIndex;
 
-    // 게임 씬에서 일시정지/해제
-    if (idx == gameScene)
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
+        // 게임 씬에서 일시정지/해제
+        if (idx == gameScene)
         {
-            paused = !paused;
-            Time.timeScale = paused ? 0f : 1f;
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                paused = !paused;
+                Time.timeScale = paused ? 0f : 1f;
+            }
+            // ✅ Q를 누르면 즉시 게임오버
+            else if (Input.GetKeyDown(KeyCode.Q))
+            {
+                Time.timeScale = 1f;   // 안전빵
+                GameOver();
+            }
+
         }
-    }
-    // 점수판 씬에서 R 또는 Space → 재시작
-    else if (idx == scoreScene)
-    {
-        if (Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown(KeyCode.Space))
+
+        // 점수판 씬에서 R 또는 Space → 재시작
+        else if (idx == scoreScene)
         {
-            Time.timeScale = 1f;
-            gameOver = false;
-            SceneManager.LoadScene(gameScene);
+            if (Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown(KeyCode.Space))
+            {
+                Time.timeScale = 1f;
+                gameOver = false;
+                SceneManager.LoadScene(gameScene);
+            }
         }
+
     }
-}
     void StartNewRun()
-{
-    int idx = SceneManager.GetActiveScene().buildIndex;
-
-    // 점수판 씬에서 R 또는 Space 누르면 다시 시작
-    if (idx == scoreScene)
     {
-        if (Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown(KeyCode.Space))
+        int idx = SceneManager.GetActiveScene().buildIndex;
+
+        // 점수판 씬에서 R 또는 Space 누르면 다시 시작
+        if (idx == scoreScene)
         {
-            Time.timeScale = 1f;
-            gameOver = false;
-            SceneManager.LoadScene(gameScene);
+            if (Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown(KeyCode.Space))
+            {
+                Time.timeScale = 1f;
+                gameOver = false;
+                SceneManager.LoadScene(gameScene);
+            }
         }
     }
-}
 }
 
