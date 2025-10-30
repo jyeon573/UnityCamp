@@ -107,7 +107,6 @@ public class GameManager : MonoBehaviour
                 Time.timeScale = 1f;   // 안전빵
                 GameOver();
             }
-
         }
 
         // 점수판 씬에서 R 또는 Space → 재시작
