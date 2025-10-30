@@ -8,8 +8,8 @@ public class PointManager : MonoBehaviour
     public float fireInterval = 0.5f; // 발사 간격
     public float bulletSpeed = 30f; // 총알 속도
     public float bulletLifeTime = 0.7f; // 총알 생존 시간
-    public Color gunDefaultColor = Color.red; // 총구 기본 색상
-    public Color gunBlinkColor = Color.yellow; // 총구 깜박임 색상
+    public Color gunDefaultColor = Color.blue; // 총구 기본 색상
+    public Color gunBlinkColor = Color.red; // 총구 깜박임 색상
     public float blinkDuration = 1f; // 총구 깜박임 지속 시간
     public int blinkFrequency = 3; // 깜박임 횟수
 
