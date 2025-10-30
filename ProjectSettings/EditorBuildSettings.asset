@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Dayeon/Opening.unity
     guid: 167c11ce57ecdb3438e7a1bb6ab2901f
   - enabled: 1

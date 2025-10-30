@@ -4,8 +4,17 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    // ───── 싱글톤 ─────
     public static GameManager I;
+    const string ScoreKey = "LastScore";
+
+    public int gameScene = 0;
+    public int scoreScene = 1;
+
+    TMP_Text scoreText;
+    int score = 0;
+    bool gameOver = false;
+    bool paused;   // 일시정지 상태
+
     void Awake()
     {
         if (I != null && I != this)
@@ -15,153 +24,109 @@ public class GameManager : MonoBehaviour
         }
         I = this;
         DontDestroyOnLoad(gameObject);
-        Time.timeScale = 1f;
 
-        // 씬 전환 시 자동 연결 + 점수 리셋 처리
         SceneManager.activeSceneChanged += (_, __) =>
         {
             Time.timeScale = 1f;
-            AutoWireUI();
+            AutoFind();
 
             int idx = SceneManager.GetActiveScene().buildIndex;
 
-            // ✅ 게임 플레이 씬 들어올 때마다 점수 리셋
-            if (idx == gameplaySceneIndex)
+            if (idx == gameScene)
             {
-                StartNewRun();   // ← 새 함수 (1번에서 만든 거)
+                StartRun();
             }
-            // ✅ 점수판 씬이면 저장된 점수 표시
-            else if (idx == scoreSceneIndex)
+            else if (idx == scoreScene)
             {
-                int last = PlayerPrefs.GetInt("LastScore", 0);
-                if (scoreSceneText)
-                    scoreSceneText.text = $"{last}";
+                int last = PlayerPrefs.GetInt(ScoreKey, 0);
+                if (scoreText) scoreText.text = $"{last}";
             }
         };
     }
 
-    // ───── 씬 정보 ─────
-    [Header("Scene Index")]
-    public int gameplaySceneIndex = 1;
-    public int scoreSceneIndex = 2;
-
-    // ───── UI 참조 ─────
-    [Header("UI")]
-    public TMP_Text inGameScoreText;  // 게임 중 점수 텍스트
-    public TMP_Text scoreSceneText;   // 점수판 씬 텍스트
-
-    public string inGameScoreName = "CurrentScore";
-    public string scoreTextName = "ScoreText";
-
-    // ───── 상태값 ─────
-    public int count = 0;
-    bool isPaused = false;
-    bool isGameOver = false;
-
     void Start()
     {
-        AutoWireUI();
-        UpdateInGameScoreUI();
+        AutoFind();
+        UpdateUI();
     }
 
-    void Update()
+    void AutoFind()
     {
-        int cur = SceneManager.GetActiveScene().buildIndex;
-
-        // 게임 씬: 일시정지/재시작
-        if (cur == gameplaySceneIndex)
-        {
-            if (Input.GetKeyDown(KeyCode.Space) ||
-                Input.GetKeyDown(KeyCode.Q) ||
-                Input.GetKeyDown(KeyCode.Escape))
-                TogglePause();
-
-            if (Input.GetKeyDown(KeyCode.R))
-            {
-                Time.timeScale = 1f;
-                isPaused = false;
-                isGameOver = false;
-                SceneManager.LoadScene(gameplaySceneIndex);
-            }
-        }
-        // 점수판 씬: Space/R = 게임 다시 시작
-        else if (cur == scoreSceneIndex)
-        {
-            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.R))
-            {
-                Time.timeScale = 1f;
-                isPaused = false;
-                isGameOver = false;
-                SceneManager.LoadScene(gameplaySceneIndex);
-            }
-        }
+        var go = GameObject.Find("CurrentScore");
+        scoreText = go ? go.GetComponent<TMP_Text>() : null;
     }
 
-    // ───── 점수 관리 ─────
     public void CountUp(int add)
     {
-        count += add;
-        Debug.Log($"[GameManager] Count = {count}");
-        UpdateInGameScoreUI();
+        score += add;
+        Debug.Log($"score = {score}");
+        UpdateUI();
     }
 
-    // ───── 게임오버 처리 ─────
+    void UpdateUI()
+    {
+        if (scoreText) scoreText.text = score.ToString();
+    }
+
     public void GameOver()
     {
-        if (isGameOver) return;
-        isGameOver = true;
+        if (gameOver) return;
+        gameOver = true;
 
-        PlayerPrefs.SetInt("LastScore", count);
+        PlayerPrefs.SetInt(ScoreKey, score);
         PlayerPrefs.Save();
 
+        SceneManager.LoadScene(scoreScene);
+    }
+
+    void StartRun()
+    {
+        score = 0;
+        gameOver = false;
         Time.timeScale = 1f;
-        SceneManager.LoadScene(scoreSceneIndex);
+        AutoFind();
+        UpdateUI();
     }
 
     // ───── 내부 함수들 ─────
-    void TogglePause()
-    {
-        if (isGameOver) return;
-        isPaused = !isPaused;
-        Time.timeScale = isPaused ? 0f : 1f;
-    }
+    void Update()
+{
+    int idx = SceneManager.GetActiveScene().buildIndex;
 
-    void AutoWireUI()
+    // 게임 씬에서 일시정지/해제
+    if (idx == gameScene)
     {
-        if (!inGameScoreText)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            var go = GameObject.Find("CurrentScore");
-            if (go) inGameScoreText = go.GetComponent<TMP_Text>();
+            paused = !paused;
+            Time.timeScale = paused ? 0f : 1f;
         }
-
-        if (!scoreSceneText)
+    }
+    // 점수판 씬에서 R 또는 Space → 재시작
+    else if (idx == scoreScene)
+    {
+        if (Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown(KeyCode.Space))
         {
-            var go2 = GameObject.Find(scoreTextName);
-            if (go2) scoreSceneText = go2.GetComponent<TMP_Text>();
+            Time.timeScale = 1f;
+            gameOver = false;
+            SceneManager.LoadScene(gameScene);
         }
-
-        if (!scoreSceneText)
-    {
-        var go2 = GameObject.Find("CurrentScore");
-        if (!go2) go2 = GameObject.Find("ScoreText");
-        if (go2) scoreSceneText = go2.GetComponent<TMP_Text>();
     }
-    }
-
-    void UpdateInGameScoreUI()
-    {
-        if (inGameScoreText)
-            inGameScoreText.text = count.ToString();
-    }
-
+}
     void StartNewRun()
+{
+    int idx = SceneManager.GetActiveScene().buildIndex;
+
+    // 점수판 씬에서 R 또는 Space 누르면 다시 시작
+    if (idx == scoreScene)
     {
-        count = 0;            // ✅ 점수 리셋
-        isPaused = false;
-        isGameOver = false;
-        Time.timeScale = 1f;
-        AutoWireUI();         // 새 씬의 텍스트 다시 물고
-        UpdateInGameScoreUI();// 0으로 즉시 표시
+        if (Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown(KeyCode.Space))
+        {
+            Time.timeScale = 1f;
+            gameOver = false;
+            SceneManager.LoadScene(gameScene);
+        }
     }
+}
 }
 

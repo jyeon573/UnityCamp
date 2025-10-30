@@ -80,6 +80,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 49
+      Script: {instanceID: 0}
     - Class: 54
       Script: {instanceID: 0}
     - Class: 65
@@ -105,27 +107,33 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1562}
     - Class: 114
+      Script: {instanceID: 2180}
+    - Class: 114
       Script: {instanceID: 2798}
     - Class: 114
       Script: {instanceID: 2888}
     - Class: 114
-      Script: {instanceID: 3250}
+      Script: {instanceID: 3890}
     - Class: 114
-      Script: {instanceID: 3892}
+      Script: {instanceID: 4000}
     - Class: 114
-      Script: {instanceID: 4002}
+      Script: {instanceID: 4068}
     - Class: 114
-      Script: {instanceID: 4308}
+      Script: {instanceID: 4306}
     - Class: 114
-      Script: {instanceID: 4780}
+      Script: {instanceID: 4322}
     - Class: 114
-      Script: {instanceID: 5018}
+      Script: {instanceID: 4778}
     - Class: 114
-      Script: {instanceID: 5722}
+      Script: {instanceID: 5016}
     - Class: 114
-      Script: {instanceID: 6808}
+      Script: {instanceID: 5720}
     - Class: 114
-      Script: {instanceID: 7334}
+      Script: {instanceID: 6806}
+    - Class: 114
+      Script: {instanceID: 7332}
+    - Class: 114
+      Script: {instanceID: 7820}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -178,70 +186,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2798}
     - Class: 114
-      Script: {instanceID: 3250}
+      Script: {instanceID: 5016}
     - Class: 114
-      Script: {instanceID: 5018}
+      Script: {instanceID: 5720}
     - Class: 114
-      Script: {instanceID: 5722}
+      Script: {instanceID: 6038}
     - Class: 114
-      Script: {instanceID: 6040}
-    - Class: 115
-      Script: {instanceID: 0}
-    - Class: 128
-      Script: {instanceID: 0}
-    - Class: 157
-      Script: {instanceID: 0}
-    - Class: 196
-      Script: {instanceID: 0}
-    - Class: 213
-      Script: {instanceID: 0}
-    - Class: 222
-      Script: {instanceID: 0}
-    - Class: 223
-      Script: {instanceID: 0}
-    - Class: 224
-      Script: {instanceID: 0}
-    Assets/Scenes/Dayeon/Opening.unity:
-    - Class: 1
-      Script: {instanceID: 0}
-    - Class: 4
-      Script: {instanceID: 0}
-    - Class: 20
-      Script: {instanceID: 0}
-    - Class: 21
-      Script: {instanceID: 0}
-    - Class: 28
-      Script: {instanceID: 0}
-    - Class: 48
-      Script: {instanceID: 0}
-    - Class: 49
-      Script: {instanceID: 0}
-    - Class: 81
-      Script: {instanceID: 0}
-    - Class: 89
-      Script: {instanceID: 0}
-    - Class: 104
-      Script: {instanceID: 0}
-    - Class: 108
-      Script: {instanceID: 0}
-    - Class: 114
-      Script: {instanceID: 1560}
-    - Class: 114
-      Script: {instanceID: 1562}
-    - Class: 114
-      Script: {instanceID: 2180}
-    - Class: 114
-      Script: {instanceID: 2798}
-    - Class: 114
-      Script: {instanceID: 3250}
-    - Class: 114
-      Script: {instanceID: 4070}
-    - Class: 114
-      Script: {instanceID: 4324}
-    - Class: 114
-      Script: {instanceID: 5018}
-    - Class: 114
-      Script: {instanceID: 5722}
+      Script: {instanceID: 7820}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -511,12 +462,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnTransformParentChangedMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: 27153c225a5bec21b6900e7ada3319ef
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: GameManager
   - hash:
       serializedVersion: 2
       Hash: d41ab9b5ea92474f9c0a6937a0607ce1
@@ -1147,10 +1092,15 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 1b566493ed8b70a656ef8a51018aa0e6
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: GameManager
   platform: 2
   scenePathNames:
-  - Assets/Scenes/Dayeon/Opening.unity
   - Assets/Scenes/Dayeon/DayeonScene.unity
   - Assets/Scenes/Dayeon/GameOver.unity
   playerPath: /Users/jungdayeon/Library/Mobile Documents/com~apple~CloudDocs/25-2/SW
-    Festival/CheeseChase.app
+    Festival/CheeseChaseFinal.app

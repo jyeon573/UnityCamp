@@ -1044,20 +1044,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0df70597abed5334ebf2771c34452ee8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heart3: {fileID: 712391585}
-  heart2: {fileID: 50546842}
-  heart1: {fileID: 63227208}
-  binHeart: {fileID: 21300002, guid: fed24bd82cefc0c4a8ef64dab6231b53, type: 3}
   speed: 0
-  rigid: {fileID: 1410546442}
-  heart: 3
-  count: 0
-  GM: {fileID: 1414505076}
---- !u!54 &1410546442 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 195828954494628491, guid: accd98c132fdc4b32a177fbc9af5ce45, type: 3}
-  m_PrefabInstance: {fileID: 1692584013}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1410546447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1072,13 +1059,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   invincibilityDuration: 2
   blinkInterval: 0.2
-  isInvincible: 0
   damageOverlay: {fileID: 0}
   heart3: {fileID: 712391585}
   heart2: {fileID: 50546842}
   heart1: {fileID: 63227208}
   binHeart: {fileID: 21300002, guid: fed24bd82cefc0c4a8ef64dab6231b53, type: 3}
-  gameManager: {fileID: 1414505076}
   heart: 3
 --- !u!114 &1410546452
 MonoBehaviour:
@@ -1095,17 +1080,6 @@ MonoBehaviour:
   damageImage: {fileID: 1776076275}
   maxAlpha: 0.5
   fadeDuration: 1
---- !u!114 &1414505076 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5540559383162684363, guid: 9b2457040eaae3f4f8632f5d953e4f8c, type: 3}
-  m_PrefabInstance: {fileID: 96066519}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9dda745972476064099f8ce4c75559f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1554252175
 GameObject:
   m_ObjectHideFlags: 0
@@ -1333,7 +1307,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8039034459002610540, guid: accd98c132fdc4b32a177fbc9af5ce45, type: 3}
       propertyPath: speed
-      value: 8
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8039034459002610540, guid: accd98c132fdc4b32a177fbc9af5ce45, type: 3}
       propertyPath: rotationSpeed
